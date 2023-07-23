@@ -1,0 +1,23 @@
+<html ng-app="app" ng-controller = "testController">
+	<head>
+		<title ng-html-bind="title"></title>
+		<script src="./lib/angular.js"></script>
+		<script src="./js/app.js"></script>
+	</html>
+	<body>
+		<button ng-click="loadFile()">Load File</button>
+		<button ng-click="loadDB()">Load Database</button>
+		<table>
+			<thead>
+				<tr>
+					<th ng-repeat="col in arrCol track by $index">{{col.label}}</th>
+				</tr>
+			</thead>
+			<tbody ng-repeat="obj in arr track by $index">
+				<tr>
+					<td ng-repeat="col in arrCol track by $index">{{obj[col.key]}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</head>
